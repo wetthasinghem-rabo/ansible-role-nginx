@@ -368,6 +368,10 @@ nginx_http_template:
 # Enable creating dynamic templated NGINX stream configuration files.
 nginx_stream_template_enable: false
 nginx_stream_template_listen: 12345
+
+# Optional - allow developers control over handlers
+# Default is true
+run_handlers: true
 ```
 
 Dependencies

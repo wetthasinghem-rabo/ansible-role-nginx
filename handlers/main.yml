@@ -4,30 +4,36 @@
     name: nginx
     state: started
     enabled: yes
+  when: run_handlers
 
 - name: "(Handler: All OSs) Reload NGINX"
   service:
     name: nginx
     state: reloaded
+  when: run_handlers
 
 - name: "(Handler: All OSs) Start NGINX Amplify Agent"
   service:
     name: amplify-agent
     state: started
+  when: run_handlers
 
 - name: "(Handler: All OSs) Start NGINX Controller Agent"
   service:
     name: controller-agent
     state: started
+  when: run_handlers
 
 - name: "(Handler: Debian/Ubuntu/CentOS/RedHat) Start NGINX Unit"
   service:
     name: unit
     state: started
     enabled: yes
+  when: run_handlers
 
 - name: "(Handler: FreeBSD) Start NGINX Unit"
   service:
     name: unitd
     state: started
     enabled: yes
+  when: run_handlers
